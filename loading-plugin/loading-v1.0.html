@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="css/basic.css" type="text/css" rel="stylesheet">
+
+		<style>
+			.header {
+				background: #f5f5f5;
+				border-bottom: 1px solid #e5e5e5;
+				width: 100%;
+			}
+			
+			.header_box {
+				width: 960px;
+				margin: 0 auto;
+				padding: 10px 0;
+				overflow: hidden;
+				line-height: 60px;
+			}
+			
+			.header_box .logo {
+				font-size: 24px;
+				font-weight: 400;
+				color: #333;
+				height: 60px;
+				line-height: 60px;
+				float: left;
+				border-right: 2px solid #c9c9c9;
+				padding-right: 20px;
+			}
+			
+			.header_box .sub_tit {
+				font-size: 22px;
+				font-weight: 400;
+				font-family: '宋体';
+				color: #666;
+				height: 60px;
+				line-height: 60px;
+				overflow: hidden;
+				float: left;
+				padding-left: 20px;
+			}
+			
+			.header_box .f_r {
+				font-size: 12px;
+				margin: 5px -10px 0 0;
+			}
+			
+			.header_box .f_r span {
+				margin-right: 10px;
+			}
+			
+			.wrapper {
+				width: 960px;
+				margin: 2% auto 0;
+				padding-bottom: 30px;
+			}
+			
+			.wrapper h3 {
+				font-size: 14px;
+				font-weight: 700;
+				color: #333;
+				height: 30px;
+				line-height: 30px;
+				font-family: "Microsoft yahei", Arial;
+				margin-bottom: 5px;
+			}
+			
+			.code_box {
+				width: 960px;
+				overflow: hidden;
+				border-bottom: 1px solid #e1e1e1;
+				padding-bottom: 20px;
+				margin-bottom: 40px;
+			}
+			
+			.code_box pre {
+				width: 340px;
+				background: #f5f5f5;
+				padding: 10px 20px;
+				font-family: "Consolas", "Courier New", Courier, mono;
+				font-size: 13px;
+				line-height: 18px;
+				border: 1px solid #eee;
+				float: left;
+				color: #333;
+			}
+			
+			pre {
+				display: block;
+				font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+				padding: 9.5px;
+				margin-bottom: 10px;
+				font-size: 12px;
+				line-height: 20px;
+				word-break: break-all;
+				word-wrap: break-word;
+				white-space: pre;
+				white-space: pre-wrap;
+				background-color: #f5f5f5;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				color: #333;
+			}
+			
+			.con_right {
+				width: 558px;
+				float: left;
+				padding-left: 20px;
+			}
+			
+			.con_right p {
+				font-size: 13px;
+				color: #515151;
+				margin-bottom: 10px;
+				line-height: 24px;
+			}
+			
+			.code_box .run {
+				border: 1px solid;
+				border-radius: 2px;
+				cursor: pointer;
+				font-family: "Microsoft yahei", Arial;
+				font-size: 12px;
+				/*min-width: 50px;*/
+				padding: 0 10px;
+				height: 22px;
+				line-height: 22px;
+				display: block;
+				text-align: center;
+				border-color: #c3c3c3;
+				background: #ececec;
+				color: #333;
+				background: -webkit-gradient(linear, center bottom, center top, from(#ececec), to(#f4f4f4));
+				background: -moz-linear-gradient(90deg, #ececec, #f4f4f4);
+				text-decoration: none;
+			}
+			
+			.param_tb {
+				width: 960px;
+				border-collapse: collapse;
+				border-bottom: 1px solid #e1e1e1;
+				border-left: 1px solid #e1e1e1;
+				font-size: 13px;
+				color: #333;
+			}
+			
+			table {
+				width: 100%;
+				empty-cells: show;
+				background-color: transparent;
+				border-collapse: collapse;
+				border-spacing: 0;
+			}
+			
+			.param_tb th {
+				background: #f5f5f5;
+				line-height: 40px;
+				border-right: 1px solid #e1e1e1;
+				font-family: "Microsoft yahei", Arial;
+				font-size: 14px;
+				font-weight: 700;
+				border-top: 2px solid #4D90F0;
+			}
+			
+			table th {
+				text-align: left;
+				font-weight: 400;
+			}
+			
+			.param_tb tr td {
+				line-height: 20px;
+				padding: 5px 0;
+				text-align: center;
+				border-right: 1px solid #e1e1e1;
+				border-bottom: 1px solid #e1e1e1;
+			}
+			
+			.param_tb tr .t_l {
+				text-align: left;
+				padding: 5px 10px;
+			}
+			
+			.param_tb p {
+				line-height: 20px;
+				padding: 5px 0;
+			}
+			
+			.html_code {
+				margin-top: 50px;
+			}
+			
+			.param_tb .even td {
+				background: #f5f5f5;
+			}
+			
+			.html_code p {
+				font-size: 13px;
+				margin-bottom: 10px;
+			}
+			
+			.btnWrap a {
+				margin-right: 10px;
+			}
+			
+			.btnWrap a.dn {
+				display: none;
+			}
+			
+			.showGifWrap ul {
+				position: relative;
+				width: 960px;
+				height: 400px;
+				margin-top: 50px;
+			}
+			
+			.showGifWrap ul li {
+				position: absolute;
+				text-align: center;
+				border: 1px solid gray;
+			}
+			
+			.showGifWrap ul li.show_1 {
+				top: 0;
+				left: 0;
+				width: 150px;
+				height: 400px;
+			}
+			
+			.showGifWrap ul li.show_2 {
+				top: 0;
+				left: 185px;
+				width: 770px;
+				height: 150px;
+			}
+			
+			.showGifWrap ul li.show_3 {
+				width: 210px;
+				height: 210px;
+				top: 170px;
+				left: 170px;
+			}
+			
+			.showGifWrap ul li.show_4 {
+				width: 550px;
+				height: 210px;
+				top: 190px;
+				left: 360px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="header">
+			<div class="header_box">
+				<h1 class="logo">loading-v1.0 [ 基于jquery ]<span style="font-size: 12px;"> 兼容万恶的 IE 7/8 : ) </span></h1>
+
+				<h2 class="sub_tit">演示与说明</h2>
+				<span class="f_r fr">by : <span>feng</span></span>
+			</div>
+		</div>
+
+		<div class="wrapper">
+
+			<h3><span style="font-size: 18px;color: orange;">写这个插件的初衷</span></h3>
+
+			<div class="code_box">
+				<pre>$.ajax({
+    type: "post",
+    url: "/xxx/xxx",
+    data: {a:b,c:d},
+    beforeSend: function () {
+        //显示遮罩层
+        $('body').loading({
+            uid: 'loading1',
+            iconUrl: 'images/loading_2.gif',
+            position: 'fixed'
+        });
+    },
+    success: function (result) {
+
+    },
+    compelete: function () {
+        //隐藏遮罩层
+        $('body').loading('hide');
+    },
+    error: function () {
+
+    }
+});
+</pre>
+				<div class="con_right">
+					<p>1.考虑到 jquery ajax 在网络卡的时候
+						<br>  或者请求大量数据的时候
+						<br>  数据返回的间隔时间会很长
+						<br>  这样子渲染页面就会有个卡顿感
+						<br>  用 loading 可以提升用户体验
+						<br>  起到一个平滑的作用
+					</p>
+					<p>2.考虑到 点击一个按钮后 在网络卡的时候的等待
+				</div>
+			</div>
+
+			<h3>整个屏幕的遮罩</h3>
+
+			<div class="code_box">
+				<pre> $('body').loading({
+    uid: 'loading1',
+    iconUrl: 'images/loading_2.gif',
+    position: 'fixed'
+ });
+</pre>
+				<div class="con_right">
+					<p>body最简单的配置[ 简单点,配置的方式简单点 ]
+						<br>
+						<b>uid：</b>当前loading的唯一标识
+						<br>
+						<b>iconUrl：</b>loading图片
+						<br>
+						<b>position：</b>定位方式[ $('body') 要用fixed,不要问为什么 : ) ] </p>
+
+					<div class="btnWrap clearfix">
+						<a href="javascript:;" class="run fl" id="demoBtn1">运行</a>
+						<a href="javascript:;" class="run fl dn" id="demoBtn1_show">显示[需要运行后,无销毁]</a>
+						<a href="javascript:;" class="run fl dn" id="demoBtn1_close">关闭</a>
+						<a href="javascript:;" class="run fl dn" id="demoBtn1_destroy">销毁</a>
+					</div>
+				</div>
+			</div>
+
+			<h3>局部的遮罩</h3>
+
+			<div class="code_box">
+				<pre> $('#demoBtn2').loading({
+    uid: 'loading2',
+    iconUrl: 'images/loading_2.gif',
+    position: 'absolute',
+    width:37/2,
+    height:37/2
+ });
+</pre>
+				<div class="con_right">
+					<p>局部的配置
+						<br>
+						<b>uid：</b>当前loading的唯一标识
+						<br>
+						<b>iconUrl：</b>loading图片
+						<br>
+						<b>position：</b>定位方式[ 用absolute,不要问为什么 : ) ]
+						<br>
+						<b>width：</b>手动设置图片的宽
+						<br>
+						<b>height：</b>手动设置图片的高
+					</p>
+
+					<div class="btnWrap clearfix">
+						<a href="javascript:;" class="run fl" id="demoBtn2">运行[我的id为demoBtn2]</a>
+						<a href="javascript:;" class="run fl dn" id="demoBtn2_show">显示[需要运行后,无销毁]</a>
+						<a href="javascript:;" class="run fl dn" id="demoBtn2_close">关闭</a>
+						<a href="javascript:;" class="run fl dn" id="demoBtn2_destroy">销毁</a>
+					</div>
+				</div>
+			</div>
+
+			<h3>默认参数配置</h3>
+
+			<div class="code_box">
+				<pre>$(function () {
+
+    $.loading.setDefaults({
+       iconUrl: 'images/loading_2.gif',
+       opacity: 0.7,
+       width:37,
+       height:37,
+       fade:300
+    });
+
+});
+</pre>
+				<div class="con_right">
+					<p>用来配置loading的默认参数
+						<br> 实际调用的时候,就可以少配置这些参数咯 : )
+						<br>
+					</p>
+				</div>
+			</div>
+
+			<h3>相关操作</h3>
+
+			<div class="code_box">
+				<pre>
+$('xxx').loading("show");
+
+$('xxx').loading("hide");
+
+$('xxx').loading("destroy");
+     </pre>
+				<div class="con_right">
+					<p>
+						xxx为类名
+						<br>
+						<b> "show"：</b>显示loading,前提是有运行过的loading
+						<br>
+						<b> "hide"：</b>隐藏loading
+						<br>
+						<b> "destroy"：</b>销毁loading
+					</p>
+				</div>
+			</div>
+
+			<h3>参数列表</h3>
+			<table class="param_tb">
+				<colgroup>
+					<col style="width:120px">
+						<col style="width:140px">
+							<col style="width:90px">
+								<col style="width:610px">
+				</colgroup>
+				<thead>
+					<tr class="even">
+						<th>参数</th>
+						<th>参数类型</th>
+						<th>默认参数</th>
+						<th>参数说明</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>uid</td>
+						<td>String</td>
+						<td>''</td>
+						<td class="t_l">
+							<p><b>唯一标识[*必须配置]</b></p>
+
+							<p>唯一标识区分于页面其他loading</p>
+
+							<p>同一页面上不能重复</p>
+						</td>
+					</tr>
+					<tr class="even">
+
+						<td>position</td>
+						<td>String</td>
+						<td>''</td>
+						<td class="t_l">
+							<p><b>定位方式[*必须配置]</b></p>
+
+							<p>作用在 body 要用 fixed</p>
+
+							<p>作用在局部 用absolute</p>
+						</td>
+					</tr>
+
+					<tr>
+						<td>iconUrl</td>
+						<td>String</td>
+						<td>''</td>
+						<td class="t_l">
+							<p><b>gif图片[*必须配置]</b></p>
+
+							<p>loading的gif图</p>
+
+							<p>自定义图片,要结合loading的透明背景,不然会影响美观</p>
+						</td>
+					</tr>
+
+					<tr class="even">
+						<td>opacity</td>
+						<td>Number</td>
+						<td>0.7</td>
+						<td class="t_l">
+							<p><b>透明度</b></p>
+
+							<p>透明度 0.0~1.0</p>
+
+						</td>
+					</tr>
+
+					<tr>
+						<td>width</td>
+						<td>Number</td>
+						<td>''</td>
+						<td class="t_l">
+							<p><b>gif 图片的宽</b></p>
+
+							<p>width 可以不用配置,默认原图的宽</p>
+						</td>
+					</tr>
+					<tr class="even">
+						<td>height</td>
+						<td>Number</td>
+						<td>''</td>
+						<td class="t_l">
+							<p><b>gif 图片的高</b></p>
+
+							<p>height 可以不用配置,默认原图的高</p>
+						</td>
+					</tr>
+
+					<tr>
+						<td>fade</td>
+						<td>Number</td>
+						<td>''</td>
+						<td class="t_l">
+							<p><b>淡入淡出效果</b></p>
+
+							<p>fade 可以不用配置,默认没有淡入淡出效果</p>
+						</td>
+					</tr>
+
+				</tbody>
+			</table>
+
+			<div class="showGifWrap">
+				<ul class="clearfix">
+					<li class="show_1">稍微有点瑕疵</li>
+					<li class="show_2">影响美观,可以调淡opacity,或换一张gif图</li>
+					<li class="show_3">完美！</li>
+					<li class="show_4">完美！</li>
+				</ul>
+
+			</div>
+
+			<div class="html_code">
+
+				<p>下载loading：<a href="loading-v1.0.zip" target="_blank">loading-v1.0.zip</a>
+				</p>
+
+				<p>作者：feng　代码整理：feng</p>
+
+				<p>＊尊重他人劳动成果，转载请自觉注明出处！注：此代码仅供学习交流，请勿用于商业用途。</p>
+			</div>
+		</div>
+
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/loading-v1.0.min.js"></script>
+		<script>
+			$(function() {
+				$.loading.setDefaults({
+					iconUrl: 'images/loading_2.gif',
+					fade: 300
+				});
+				showMaskGif();
+				event();
+			});
+
+			function event() {
+				$('#demoBtn1').click(function() {
+					$('body').loading({
+						uid: 'loading1',
+						position: 'fixed'
+					});
+					$('#demoBtn1_close,#demoBtn1_destroy').css({
+						position: 'fixed',
+						zIndex: 10002,
+						right: 30,
+						display: 'block'
+					});
+					$('#demoBtn1_close').css({
+						top: 30
+					});
+					$('#demoBtn1_destroy').css({
+						top: 70
+					});
+					$('#demoBtn1_show').show();
+				});
+				$('#demoBtn1_close').click(function() {
+					$('body').loading('hide');
+					$('#demoBtn1_close,#demoBtn1_destroy').hide();
+				});
+				$('#demoBtn1_destroy').click(function() {
+					$('body').loading("destroy");
+					$('#demoBtn1_close,#demoBtn1_destroy').hide();
+					$('#demoBtn1_show').hide();
+				});
+				$('#demoBtn1_show').click(function() {
+					$('#demoBtn1_close,#demoBtn1_destroy').css({
+						position: 'fixed',
+						zIndex: 10002,
+						right: 30,
+						display: 'block'
+					});
+					$('#demoBtn1_close').css({
+						top: 30
+					});
+					$('#demoBtn1_destroy').css({
+						top: 70
+					});
+					$('body').loading("show");
+				});
+				$('#demoBtn2').click(function() {
+					$('#demoBtn2').loading({
+						uid: 'loading2',
+						position: 'absolute',
+						width: 37 / 2,
+						height: 37 / 2
+					});
+					$('#demoBtn2_close,#demoBtn2_destroy').show();
+					$('#demoBtn2_show').show();
+				});
+				$('#demoBtn2_close').click(function() {
+					$('#demoBtn2').loading('hide');
+					$('#demoBtn2_close,#demoBtn2_destroy').hide();
+				});
+				$('#demoBtn2_destroy').click(function() {
+					$('#demoBtn2').loading("destroy");
+					$('#demoBtn2_close,#demoBtn2_destroy').hide();
+					$('#demoBtn2_show').hide();
+				});
+				$('#demoBtn2_show').click(function() {
+					$('#demoBtn2_close,#demoBtn2_destroy').show();
+					$('#demoBtn2').loading("show");
+				});
+			};
+
+			function showMaskGif() {
+				$('.showGifWrap ul li.show_1').loading({
+					uid: 'gif1',
+					position: 'absolute',
+					iconUrl: 'images/loading_1.gif',
+					opacity: 0.1
+				});
+				$('.showGifWrap ul li.show_2').loading({
+					uid: 'gif2',
+					position: 'absolute',
+					iconUrl: 'images/loading_6.gif',
+					opacity: 0.6
+				});
+				$('.showGifWrap ul li.show_3').loading({
+					uid: 'gif3',
+					position: 'absolute',
+					iconUrl: 'images/loading_3.gif',
+					opacity: 0.1
+				});
+				$('.showGifWrap ul li.show_4').loading({
+					uid: 'gif4',
+					position: 'absolute',
+					iconUrl: 'images/loading_4.gif',
+					opacity: 0.6
+				});
+			};
+		</script>
+
+	</body>
+
+</html>

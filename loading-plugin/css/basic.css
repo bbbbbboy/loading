@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {margin:0;padding:0;}
+table {border-collapse:collapse;border-spacing:0;}
+fieldset,img,input { border:0;outline:none;}
+ol,ul,li { list-style:none;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:normal;}
+q:before,q:after {content:'';}
+h2 { font-family:\5FAE\8F6F\96C5\9ED1,SimSun;font-size:15px;}
+a {text-decoration:none;color:black;}
+a:hover { cursor:pointer;}
+.fl { float:left;}
+.fr { float:right;}
+.clearfix:after{content: ".";display: block;height: 0;clear: both;visibility: hidden;}
+.clearfix{zoom: 1; }
+.clear {clear:both;}
+body{ font:12px/18px \5FAE\8F6F\96C5\9ED1,\5B8B\4F53;height:100%;}
+.mag {margin: 0 auto;}
+.overf {overflow: hidden;}
